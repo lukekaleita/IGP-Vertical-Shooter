@@ -172,3 +172,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnY: 10
   explosionPrefab: {fileID: 5570453775858586851, guid: 4fae68cc6571b8f4fab61712a1f48197, type: 3}
+  explosionSound: {fileID: 0}

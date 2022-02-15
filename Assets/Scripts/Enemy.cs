@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject explosionPrefab;
     private float _respawnX;
     private Rigidbody2D _rigidbody2D;
+    
 
     private void Awake()
     {

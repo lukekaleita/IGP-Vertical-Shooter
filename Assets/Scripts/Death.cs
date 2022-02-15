@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
-    void Update()
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             LoadNextScene();
         }
-    }
+    }*/
     private void OnEnable()
     {
         PlayerHealth.HealthChanged += CheckIfDead;
@@ -34,7 +34,7 @@ public class Death : MonoBehaviour
 
     private void LoadNextScene()
     {
-        Debug.Log("Loaded Next Scene");
+        //Debug.Log("Loaded Next Scene");
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

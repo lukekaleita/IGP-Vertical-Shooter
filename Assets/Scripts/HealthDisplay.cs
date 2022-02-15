@@ -9,6 +9,7 @@ public class HealthDisplay : MonoBehaviour
 {
     [SerializeField] private Image[] heartImages;
     [SerializeField] private int numSegments = 4;
+    [SerializeField] private AudioSource damageSound;
     private void OnEnable()
     {
         PlayerHealth.HealthChanged += OnHealthChanged;
@@ -23,6 +24,8 @@ public class HealthDisplay : MonoBehaviour
     void OnHealthChanged(int health)
     {
         //Debug.Log("Health" + health);
+        
+        damageSound.Play();
         
         for (int i = 0; i < heartImages.Length; i++)
         {

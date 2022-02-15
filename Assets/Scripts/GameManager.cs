@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject[] enemyArray;
     [SerializeField] private List<GameObject> activeEnemyList;
+    [SerializeField] private AudioSource explosionSound;
     
     private void Awake()
     {
@@ -24,7 +25,9 @@ public class GameManager : MonoBehaviour
 
     public void UnListEnemy(GameObject enemy)
     {
+        explosionSound.Play();
         activeEnemyList.Remove(enemy);
+        
         if (activeEnemyList.Count == 0)
         {
             ResetAllEnemies();
