@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class PlayerHealth
 {
-    public static event Action<int> healthChanged;
+    public static event Action<int> HealthChanged;
     private static int _health = 12;
 
     public static int GetHealth()
@@ -17,7 +17,7 @@ public static class PlayerHealth
         if (_health == health)
             return;
         _health = health;
-        healthChanged?.Invoke(_health);
+        HealthChanged?.Invoke(_health);
     }
     
 }

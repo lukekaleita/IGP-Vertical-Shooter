@@ -10,13 +10,13 @@ public class HealthDisplay : MonoBehaviour
     [SerializeField] private int numSegments = 4;
     private void OnEnable()
     {
-        PlayerHealth.healthChanged += OnHealthChanged;
+        PlayerHealth.HealthChanged += OnHealthChanged;
         OnHealthChanged(PlayerHealth.GetHealth());
     }
 
     private void OnDisable()
     {
-        PlayerHealth.healthChanged -= OnHealthChanged;
+        PlayerHealth.HealthChanged -= OnHealthChanged;
     }
 
     void OnHealthChanged(int health)
