@@ -18,4 +18,6 @@ public class PlayerShip : MonoBehaviour
     {
         PlayerHealth.SetHealth(PlayerHealth.GetHealth()-1);
     }
+    
+    
 }

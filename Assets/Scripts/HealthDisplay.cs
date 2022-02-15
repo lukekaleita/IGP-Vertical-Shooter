@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthDisplay : MonoBehaviour
 {
@@ -22,9 +23,13 @@ public class HealthDisplay : MonoBehaviour
     void OnHealthChanged(int health)
     {
         //Debug.Log("Health" + health);
+        
         for (int i = 0; i < heartImages.Length; i++)
         {
             heartImages[i].fillAmount = (health - i * numSegments) / (float) numSegments;
         }
+        
+        
+        
     }
 }

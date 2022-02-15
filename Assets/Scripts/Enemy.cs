@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float respawnY = 10;
+    [SerializeField] private float respawnY = 15;
     [SerializeField] private GameObject explosionPrefab;
     private float _respawnX;
     private Rigidbody2D _rigidbody2D;
@@ -27,16 +27,17 @@ public class Enemy : MonoBehaviour
         _rigidbody2D.velocity = Vector2.zero;
     }
 
-    private void OnMouseDown()
+    /*private void OnMouseDown()
     {
         //Debug.Log("down");
         Despawn();
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Laser"))
         {
+            KillCounter.IncrementKills();
             Despawn();
         }
     }
@@ -44,7 +45,7 @@ public class Enemy : MonoBehaviour
     private void Despawn()
     {
         gameObject.SetActive(false);
-        GameManager.instance.UnListEnemy(gameObject);
+        GameManager.Instance.UnListEnemy(gameObject);
         Instantiate(explosionPrefab, transform.position, transform.rotation);
     }
 }

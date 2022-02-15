@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance;
 
     [SerializeField] private GameObject[] enemyArray;
     [SerializeField] private List<GameObject> activeEnemyList;
     
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private void Start()
